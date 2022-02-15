@@ -1,9 +1,38 @@
-function add(num1: number, num2: number) {
-  return num1 + num2;
+// const person: {
+//   name: string;
+//   age: number;
+//   hobbies: string[];
+//   role: [number, string];
+// } = {
+//   name: "moinul",
+//   age: 21,
+//   hobbies: ["sports", "cooking"],
+//   role: [2, "author"],
+// };
+
+enum Role {
+  ADMIN = "ADMIN",
+  READ_ONLY = "READ_ONLY",
+  AUTHOR = "AUTHOR",
 }
 
-const num1 = 10;
-const num2 = 5;
+const person = {
+  name: "moinul",
+  age: 21,
+  hobbies: ["sports", "cooking"],
+  role: Role.ADMIN,
+};
 
-const result = add(num1, num2);
-console.log(result);
+let favoriteFood: string[];
+favoriteFood = ["burger"];
+
+console.log(person.role);
+console.log(Role);
+
+for (let hobby of person.hobbies) {
+  console.log(hobby.toUpperCase());
+}
+
+if (Role.ADMIN === "ADMIN") {
+  console.log(Role.AUTHOR);
+}
